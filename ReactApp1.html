@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>React Tuts</title>
+        
+        
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+        
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="app"></div>
+    <!--  //What is a javascript Library => When using a jsLibrary, your Code is in charge i.e Jquery, Bootstrap, foundation ....
+            //What is  a javascript Framework => When using a framework, the framework itself is in charge of your code. i.e Reactjs, Angularjs, Vuejs, Ember, Riot ....
+            //What is React => React is a Component based js framework that can respond/react to users events
+            //Component => These are the building block of most modern javascript frameworks which comprises of js modules(files)
+            //State => These are the "active" parts of a component, that renders appropriate "views" based on the users events or changes in state
+            //Props => these are properties that are passed into the components at the point of instantiation
+            //VirtualDOM => This is an emulation the DOM, one function  the VirtualDOM is for Optimization of th application.
+            
+            //Process of VirtualDOM
+            //Diffs => Checks to see the components or the aspects of the app that has changed
+            //Reconcilation => Implements the change.
+
+            //Webpack => this is a javascript bundler, it's main function is to compress an a/pplication to be able to run on a web browser 
+            //Bable => This is another js framework, that helps convert or transpile es6 to es5
+            //npm => Node-Packet-Manager => used for installing, updating, upgrading, and removing a node module in a consistent manner
+
+            //create-react-app: this is a React boilerplate module, that helps us scaffold out a new react project
+            
+
+
+            //PROCEDURES FOR CREATING A REACT APP
+            //1-Create a div in your page body, to drop the react component
+            //2-Create the React App
+                  //-initialize your state(if any)
+                  //-Create a function/event that will change your the state
+                  //-Define the appropriate html view for the new state using the render() and JSX
+            //3-Dump the App into the div.
+
+
+            //Types of Components
+                ==> Functional Component => don't require state, mostly used for rendering a markup
+                ==> Class Component => Usually requires a state, used for managing the logic of the app
+-->
+
+<script type="text/jsx"> 
+   
+    
+
+
+    class HelloWorld extends React.Component {
+          constructor(Props){
+              super(Props)
+              this.state = { input: ""};
+
+              this.toggleInput = this.toggleInput.bind(this);
+          }
+
+          toggleInput(event){
+             this.setState({ input: event.target.value });
+             console.log(this.state.input);
+          }
+
+           render(){
+              return (
+                <div className="content">
+                  <Message result={this.state.input} />
+                  <input onChange={this.toggleInput} value={this.state.input} />
+                
+                    
+                 </div>
+              );
+           }
+    }
+
+
+            
+   class Message extends React.Component {
+        render(){
+            return(
+                <h3>Your new input is: {this.props.result}</h3>
+            );
+        }
+   }
+       
+    
+
+    ReactDOM.render(<HelloWorld/>, document.getElementById('app'));
+
+</script>
+
+
+     
+    </body>
+</html>

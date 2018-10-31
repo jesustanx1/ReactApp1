@@ -1,0 +1,13 @@
+body {
+    background-color: yellow;
+}
+
+.content {
+    text-align: center;
+    padding-top: 20%;
+}
+
+h3 {
+    color: blue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
